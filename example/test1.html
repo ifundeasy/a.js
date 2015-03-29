@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../modernizr.js"></script>
+	<script src="../main.js" id="a.js"></script>
+</head>
+<body>
+<script>
+	var server = {
+		data : {
+			name : "",
+			age  : "8123"
+		},
+		controller : 'home.js'
+	};
+	A.Load({
+		test : server,
+		yep  : "app1.js",
+		callback : function () {
+			A.App.controller = server.controller;
+			A.App.param = server.data;
+		}
+	})
+</script>
+</body>
+</html>

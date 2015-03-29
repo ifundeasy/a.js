@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../modernizr.js"></script>
+	<script src="../main.js" id="a.js"></script>
+</head>
+<body>
+<script>
+	console.log('A.isReady :', A.isReady);
+	i = 0; z = undefined;
+	z = setInterval(function(){
+		if (A.isReady) {
+			clearInterval(z);
+			z = undefined; i = 0;
+
+			A.Load({
+				test : A.Application,
+				yep : "app2.js"
+			})
+		}
+		i++
+	}, 100);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html class=" js no-touch csstransforms3d csstransitions">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="a.js/modernizr.js"></script>
+	<script src="lib/jquery-1.11.1.min.js"></script>
+	<script>
+		btnOnClick = function () {
+			alert('cieee habis nge-klik bang aji!')
+		};
+		btnOnMouseOver = function () {
+			document.getElementById('my-notes').textContent = Date.now();
+		};
+		loaded = function () {
+			document.getElementById("my-notes").textContent = 'cobain hover tombol diatas';
+			$('body').css('margin', 0);
+			$('body').css('height', window.innerHeight);
+			$('#my-container').css('padding', '10px');
+			$('#my-container').css('height', '80%');
+		};
+	</script>
+</head>
+<body style="margin: 0px; height: 100%;" onload="loaded()">
+<div id="my-container"><h1 id="ex-ui-bdsu2uk0tjif">Hello World!</h1>
+
+	<div id="my-content">
+		<div id="ex-ui-skndmdkmomv4">
+			<span id="ex-ui-0d2f13m08ifp">ini tombol </span>
+			<button id="ex-ui-olf23dipad00" onclick="btnOnClick()" onmouseover="btnOnMouseOver()">klik ya!</button>
+			<div id="ex-ui-r7goal49u440">notes : <span id="my-notes">cobain hover tombol diatas</span></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
