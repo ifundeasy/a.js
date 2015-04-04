@@ -7,7 +7,7 @@
 	};
 
 	A.Controller.prototype.callback = function (url, result, idx) {
-		console.log(result, url);
+		//console.log(result, url);
 		if (!result) console.error(url, result)
 	};
 	A.Controller.prototype.init = function (object) {
@@ -34,6 +34,8 @@
 		object.models = generator(object.models, A.App.path + '/model/');
 		object.stores = generator(object.stores, A.App.path + '/store/');
 		object.views = generator(object.views, A.App.path + '/view/');
+
+		A.App.controller = object;
 
 		A.Load([
 			{
@@ -71,7 +73,6 @@
 				yep     : object.views,
 				callback: me.callback,
 				complete: function () {
-					A.App.controller = object;
 					A.App.controller.init()
 				}
 			}
